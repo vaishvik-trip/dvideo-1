@@ -33,6 +33,7 @@ contract DVideo {
     // Increment video id
     videoCount ++;
 
+    //test
     // Add video to the contract
     videos[videoCount] = Video(videoCount, _videoHash, _title, msg.sender);
     // Trigger an event
