@@ -6,6 +6,8 @@ import Web3 from 'web3';
 import './App.css';
 
 //Declare IPFS
+
+
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
 
@@ -36,6 +38,7 @@ class App extends Component {
     this.setState({ account: accounts[0] })
     // Network ID
     const networkId = await web3.eth.net.getId()
+    // Network Data
     const networkData = DVideo.networks[networkId]
     if(networkData) {
       const dvideo = new web3.eth.Contract(DVideo.abi, networkData.address)
